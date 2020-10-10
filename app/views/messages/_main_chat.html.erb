@@ -1,7 +1,7 @@
 <div class="chat-header">
   <div class="left-header">
   <div class="chat-name">
-    <p>trump</p>
+    <%= @room.name %>
   </div>
   </div>
   <div class="right-header">
@@ -10,28 +10,11 @@
   </div>
   </div>
 </div>
-  <div class="chat-body">
-    <div class="chatrooom-contents">
-      <div class="upper-contents">
-        <div class="chatroom-name">Hinata</div>
-        <div class="chatroom-time">2020/10/08(Thu)08:46:59</div>
-        </div>
-        <div class="lower-contents">
-        <div class="chatroom-message">七海いるか？</div>
-      </div>
-    </div>
 
-    <div class="chatrooom-contents">
-      <div class="upper-contents">
-        <div class="chatroom-name">Nagito</div>
-        <div class="chatroom-time">2020/10/08(Thu)08:46:59</div>
-        </div>
-        <div class="lower-contents">
-        <div class="chatroom-message">僕は違うよ</div>
-      </div>
+<div class="chat-body">
+  <%= render partial:'message', collection: @messages %>
     </div>
     
-  </div>
       <%= form_with model:[ @room,@message], class: 'chat-footer', local: true do |f|%>
       <div class="form-input">
       <%= f.text_field :content, class: 'message-form', placeholder: 'type a message' %>
