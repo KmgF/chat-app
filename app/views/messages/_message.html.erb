@@ -3,6 +3,7 @@
   <div class="upper-contents">
     <div class="chatroom-name">
       <!-- 投稿したユーザー名情報を出力する --> 
+      <%= message.user.name %>
     </div>
     <div class="chatroom-time">
       <%# 投稿した時刻を出力する %>
@@ -13,6 +14,8 @@
   <div class="lower-contents">
     <div class="chatroom-message">
     <%# 投稿したメッセージ内容を記述する %>
+    <% @room.message.each do |messages|%>
+    <%= message.content %>
     </div>
   </div>
 
